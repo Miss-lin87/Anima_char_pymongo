@@ -7,4 +7,3 @@ def D10():
 def D100():
     roll = D(1,100)
     return roll
-

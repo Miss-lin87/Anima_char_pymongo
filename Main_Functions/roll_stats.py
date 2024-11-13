@@ -1,4 +1,4 @@
-from dice import D10
+from random import randint as D
 import time
 
 def menu():
@@ -83,3 +83,15 @@ def method_thre():
         x -= 1
     return rolls
 # This marks the end of the therd way to roll stats.
+
+# dice do to importing sucking ass. Fix later
+
+def D10():
+    """This function rolls a 10 sided die"""
+    roll = D(1,10)
+    return roll
+
+def D100():
+    """This function rolls a 100 sided die"""
+    roll = D(1,100)
+    return roll

@@ -12,11 +12,11 @@ def get_char():
     char = input("What character do you want to get data from ?")
     return char
 
-def check_char(char="",data=""):
+def check_char(char="",data="Physical_Abilities"):
     test = mydb[data].find_one({"_id":char})
     if test == None:
-        return "did not excist"
-    else: return test
+        return False
+    else: return True
 
 def create_char(name="", data=main.get_all_data()):
     for x in data:
@@ -30,4 +30,4 @@ def create_char(name="", data=main.get_all_data()):
             mydb[x].insert_one(Blank_data)
     return "character has been created"
 
-print(create_char("Adam"))
+# def create_stats():
