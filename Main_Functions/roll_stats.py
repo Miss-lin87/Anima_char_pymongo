@@ -85,7 +85,6 @@ def method_thre():
 # This marks the end of the therd way to roll stats.
 
 # dice do to importing sucking ass. Fix later
-
 def D10():
     """This function rolls a 10 sided die"""
     roll = D(1,10)
