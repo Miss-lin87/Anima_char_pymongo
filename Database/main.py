@@ -27,5 +27,6 @@ def replace_data(char="", data="", abillity="", new_data=""):
     return
 
 def get_all_data():
+    """This will get the name of all the diffrent sub databases like Player_information, and Physical_Abilities """
     mydb = client["Charactes"]
     return mydb.list_collection_names()
