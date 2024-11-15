@@ -45,7 +45,7 @@ def selection(select=""):
         print(main.call_one(character.removesuffix(suffix),data.search_in_db(ability), ability))
         return menu()
     elif select == "4" and character != "None" and suffix not in character:
-        ability = input("What abolity is being changed: ")
+        ability = input("What ability is being changed: ")
         new_value = input("What is the new value of the ability: ")
         main.replace_data(character.removesuffix(suffix),data.search_in_db(ability),ability,new_value)
         return menu()
