@@ -33,5 +33,3 @@ def create_char(name="", data=main.get_all_data()):
             Blank_data["_id"] = name
             mydb[x].insert_one(Blank_data)
     return "character has been created"
-
-# def create_stats():

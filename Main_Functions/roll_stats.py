@@ -8,7 +8,7 @@ def menu():
 
 def menu_text():
     """This brings up the text of the menu and gives you choses to pick. the selection is made with just numbers"""
-    print("Please make a selection:\n"
+    print("Please chose the method for rolling stats:\n"
           "1. Method one\n"
           "2. Method two\n"
           "3. Method three\n"

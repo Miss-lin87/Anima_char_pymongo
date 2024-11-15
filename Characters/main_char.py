@@ -20,8 +20,13 @@ def change_stats(char=""):
     for stat in attri:
         print(rolls)
         selection = int(input("Please select a value for " + str(stat) + " "))
-        main.replace_data(char,"Physical_Abilities", stat, selection)
-        rolls.remove(selection)
+        while selection not in rolls:
+            print("Invalid input. Try again")
+            print(rolls)
+            selection = int(input("Please select a value for " + str(stat) + " "))
+        else:
+            main.replace_data(char,"Physical_Abilities", stat, selection)
+            rolls.remove(selection)
     return "The stats have been changed. New stats are: \n" + str(get_base_attributes(char))
 
 def change_all_secondary(char=""):
@@ -35,11 +40,19 @@ def change_all_secondary(char=""):
         main.replace_data(char, "Secondary_Abilities", abilility, int(value))
     return
 
-def add_to_secundary(char="", ability=""):
+def add_to_secundary(char="", ability="", add=""):
     """This asks for a value and adds it to the ability. Do not replace it but add to it.
     returns nothing"""
     attribute = main.call_one(char, "Secondary_Abilities", ability)
-    add = input("How mutch do you want to add to " + ability + " ")
+    if add == "": add = input("How mutch do you want to add to " + ability + " : ")
     new_value = attribute + int(add)
     main.replace_data(char, "Secondary_Abilities", ability, new_value)
+    return
+
+def add_to_prim(char="", ability="", add=""):
+    """This function is used to add a value to the primary stats"""
+    stat = main.call_one(char, "Physical_Abilities", ability)
+    if add == "": add = input("How mutch do you want to add to " + ability + " : ")
+    new_value = stat + int(add)
+    main.replace_data(char, "Physical_Abilities", ability, new_value)
     return
